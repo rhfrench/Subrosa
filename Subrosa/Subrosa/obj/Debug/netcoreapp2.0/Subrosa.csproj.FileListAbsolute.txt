@@ -1,0 +1,11 @@
+C:\Development\Git\Subrosa\Subrosa\Subrosa\bin\Debug\netcoreapp2.0\Subrosa.deps.json
+C:\Development\Git\Subrosa\Subrosa\Subrosa\bin\Debug\netcoreapp2.0\Subrosa.runtimeconfig.json
+C:\Development\Git\Subrosa\Subrosa\Subrosa\bin\Debug\netcoreapp2.0\Subrosa.runtimeconfig.dev.json
+C:\Development\Git\Subrosa\Subrosa\Subrosa\bin\Debug\netcoreapp2.0\Subrosa.dll
+C:\Development\Git\Subrosa\Subrosa\Subrosa\bin\Debug\netcoreapp2.0\Subrosa.pdb
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.csprojResolveAssemblyReference.cache
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.csproj.CoreCompileInputs.cache
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.AssemblyInfoInputs.cache
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.AssemblyInfo.cs
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.dll
+C:\Development\Git\Subrosa\Subrosa\Subrosa\obj\Debug\netcoreapp2.0\Subrosa.pdb
