@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subrosa", "Subrosa\Subrosa.csproj", "{26F39E05-E1F8-4B98-91CD-38C00B50DC40}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Subrosa", "Subrosa\Subrosa.csproj", "{4D32AE30-7FA7-4E4C-B447-D995925CA522}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{26F39E05-E1F8-4B98-91CD-38C00B50DC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26F39E05-E1F8-4B98-91CD-38C00B50DC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26F39E05-E1F8-4B98-91CD-38C00B50DC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26F39E05-E1F8-4B98-91CD-38C00B50DC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D32AE30-7FA7-4E4C-B447-D995925CA522}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D32AE30-7FA7-4E4C-B447-D995925CA522}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D32AE30-7FA7-4E4C-B447-D995925CA522}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D32AE30-7FA7-4E4C-B447-D995925CA522}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2D1E5990-8F0B-436D-953B-23AF5BB4FB91}
+		SolutionGuid = {E7EA8E6B-C3A5-4942-AC9D-FE5FA45ADF59}
 	EndGlobalSection
 EndGlobal
