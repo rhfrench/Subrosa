@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KeyLogModel.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="NetworkAccessService.cs" />
     <Compile Include="Program.cs" />
@@ -58,6 +57,15 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\Users\ryanf\source\repos\Subrosa.Models\Subrosa.Models\Subrosa.Models.csproj">
+      <Project>{0d1fe516-37a0-4584-8419-28ec8a76b4af}</Project>
+      <Name>Subrosa.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
