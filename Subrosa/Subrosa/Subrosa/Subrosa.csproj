@@ -63,8 +63,8 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Users\ryanf\source\repos\Subrosa.Models\Subrosa.Models\Subrosa.Models.csproj">
-      <Project>{0d1fe516-37a0-4584-8419-28ec8a76b4af}</Project>
+    <ProjectReference Include="..\Subrosa.Models\Subrosa.Models\Subrosa.Models.csproj">
+      <Project>{0E792EA0-9DAE-484F-9F53-B5E4A06C3D76}</Project>
       <Name>Subrosa.Models</Name>
     </ProjectReference>
   </ItemGroup>

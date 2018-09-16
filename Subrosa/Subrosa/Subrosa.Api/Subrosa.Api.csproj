@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Subrosa.Models\Subrosa.Models\Subrosa.Models.csproj" />
+    <ProjectReference Include="..\Subrosa.Storage\Subrosa.Storage.csproj" />
   </ItemGroup>
 
 </Project>

